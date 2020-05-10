@@ -1,15 +1,25 @@
 #include "stdio.h"
-#include "spi.h"
+#include "sx1278.h"
 
 int main() {
-    printf("hello");
-    char buff[2] = {0x12, 0x32};
-    char *received;
+    printf("Starting Spi..\n");
 
-    spi_init(SPI_CH_0, SPI_MODE_0, 1000000, SPI_MSB);
-    received = spi_transfer(buff, 2);
-    printf("value %x %x", received[0], received[1]);
-    spi_stop();
+    sx127x_config_t c = {
+            .sync_word = 0x24,
+            .current_limit = 50,
+            .preamble_length = 512,
+            .spreading_factor = SF_10
+    };
+    spi_config_t s = {.freq = 1000000, .channel = SPI_CH_0};
+
+    sx127x_result_e result = sx1278_init(&c, &s);
+    if (result == SX127X_OK) {
+        printf("sx1278 ok");
+    } else {
+        printf("error %x", result);
+    }
+
+    sx1278_close();
 
     return 0;
 }

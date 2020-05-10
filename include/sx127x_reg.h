@@ -92,13 +92,13 @@
 #define SX127X_LNA_BOOST_ON                           0b00000011  //  1     0     150% LNA current
 
 // SX127X_REG_MODEM_CONFIG_2
-#define SX127X_SF_6                                   0b01100000  //  7     4     spreading factor:   64 chips/bit
-#define SX127X_SF_7                                   0b01110000  //  7     4                         128 chips/bit
-#define SX127X_SF_8                                   0b10000000  //  7     4                         256 chips/bit
-#define SX127X_SF_9                                   0b10010000  //  7     4                         512 chips/bit
-#define SX127X_SF_10                                  0b10100000  //  7     4                         1024 chips/bit
-#define SX127X_SF_11                                  0b10110000  //  7     4                         2048 chips/bit
-#define SX127X_SF_12                                  0b11000000  //  7     4                         4096 chips/bit
+#define SX127X_SF_6                                   0b01100000u  //  7     4     spreading factor:   64 chips/bit
+#define SX127X_SF_7                                   0b01110000u  //  7     4                         128 chips/bit
+#define SX127X_SF_8                                   0b10000000u  //  7     4                         256 chips/bit
+#define SX127X_SF_9                                   0b10010000u  //  7     4                         512 chips/bit
+#define SX127X_SF_10                                  0b10100000u  //  7     4                         1024 chips/bit
+#define SX127X_SF_11                                  0b10110000u  //  7     4                         2048 chips/bit
+#define SX127X_SF_12                                  0b11000000u  //  7     4                         4096 chips/bit
 #define SX127X_TX_MODE_SINGLE                         0b00000000  //  3     3     single TX
 #define SX127X_TX_MODE_CONT                           0b00001000  //  3     3     continuous TX
 #define SX127X_RX_TIMEOUT_MSB                         0b00000000  //  1     0
